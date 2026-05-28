@@ -1,0 +1,24 @@
+Qruakpit
+========
+
+A Rust + Tauri fork of Quakpit (https://github.com/Ooble-Studio/QuakPit) by Ooble Studio (https://ooble.studio).
+
+The original Quakpit is MIT-licensed. This fork:
+- Re-implements the application in Rust (Tauri v2) and React.
+- Vendors the original art and sound assets ('blade.png', 'head-duck.png',
+  'plane-red.png', 'plane-red-base.png', 'thumb-head-duck.png',
+  'thumb-plane-red.png', 'quack.wav', 'logo.png', and the bundled OFL fonts)
+  from the upstream repository under their original MIT license. See
+  LICENSE-quakpit for the upstream license text.
+- Adds Microsoft Outlook calendar support via Microsoft Graph.
+- Removes the Polar.sh-backed "Pro" license check; all previously gated
+  features (extra plane colours, character heads, sound packs, banner themes,
+  flight speeds, custom flier image, and multi-calendar support) are unlocked
+  for everyone.
+
+Bundled fonts:
+- Caveat and Patrick Hand under the SIL Open Font License v1.1. See
+  src/assets/fonts/OFL.txt for the full text.
+
+Original work: Copyright (c) 2024-2026 Ooble Studio.
+Fork modifications: Copyright (c) 2026 JP Wesselink.

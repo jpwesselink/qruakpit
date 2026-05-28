@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Qruakpit",
+  "version": "0.1.0",
+  "identifier": "studio.qruakpit.desktop",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "label": "settings",
+        "title": "Qruakpit",
+        "url": "index.html",
+        "width": 880,
+        "height": 660,
+        "minWidth": 720,
+        "minHeight": 560,
+        "resizable": true,
+        "visible": false,
+        "center": true
+      },
+      {
+        "label": "overlay",
+        "url": "overlay.html",
+        "width": 1440,
+        "height": 900,
+        "x": 0,
+        "y": 0,
+        "transparent": true,
+        "decorations": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": false,
+        "resizable": false,
+        "fullscreen": false,
+        "focus": false,
+        "visible": false,
+        "shadow": false,
+        "acceptFirstMouse": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app"],
+    "icon": ["icons/icon.icns", "icons/icon.png"],
+    "category": "Productivity",
+    "shortDescription": "Plane reminder for your next meeting",
+    "longDescription": "A little duck in a plane flies across your screen, above every app, towing a banner reminding you of your next meeting. Free and open source.",
+    "macOS": {
+      "minimumSystemVersion": "11.0",
+      "dmg": {
+        "appPosition": { "x": 180, "y": 220 },
+        "applicationFolderPosition": { "x": 480, "y": 220 },
+        "windowSize": { "width": 660, "height": 420 }
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "REPLACE_WITH_RELEASE_PUBLIC_KEY",
+      "endpoints": [
+        "https://github.com/yourname/qruakpit/releases/latest/download/latest.json"
+      ]
+    }
+  }
+}
